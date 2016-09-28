@@ -34,4 +34,20 @@ JavaScript中的命名函数在文件中其他一切之前执行定义，但是�
 ### 函数返回
 CoffeeScript中函数有一个重要特性：**隐式返回**。即函数中如果没有显式给定返回的值，那么函数将以运行时执行的最后一条语句结果作为返回值。
 
-其中，如果最有一条语句为`if`语句，则在`if`语句的每个分支中都加入`return`语句；如果是for循环，则返回每次循环执行结果组成的
+其中，如果最有一条语句为`if`语句，则在`if`语句的每个分支中都加入`return`语句；如果是for循环，则返回每次循环执行结果组成的数组，
+
+如果确定函数不会返回，那么可以再函数末尾添加一个没有返回值的return语句或者null。
+
+## switch语句
+CoffeeScript中的switch使用switch，when和else作为语句关键字，break命令自动插入到控制结构中。其中，when语句可以接受多个值的匹配，使用逗号隔开，还可以使用then语句将语句块缩短至一行
+
+```coffeescript
+switch iSpy
+    when 'sky'
+        console.log 'blue'
+    when 'grass', 'frog'
+        console.log 'green'
+    when 'lake' then 'dark'
+    else 
+        console.log 'grey'
+```

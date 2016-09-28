@@ -18,4 +18,15 @@ for k,v of plants
     console.log k + ':' + v
 
 str = "#{1+1}=#{1+1}"
-console.log str
+# console.log str
+
+iSpy = 'blue'
+
+switch iSpy
+    when 'sky'
+        console.log 'blue'
+    when 'grass', 'frog'
+        console.log 'green'
+    when 'lake' then 'dark'
+    else 
+        console.log 'gray'
