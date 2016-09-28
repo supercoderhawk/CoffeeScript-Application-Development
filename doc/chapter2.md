@@ -215,3 +215,12 @@ bicyle =
     gears: 24
 
 ```
+
+### 遍历对象
+使用for..of遍历对象
+
+```coffeescript
+author = name : "Ian", age: 26, favoriteLanguage： "CoffeeScript"
+for k, v of author
+    console.log "My" + k + " is " + v
+```
