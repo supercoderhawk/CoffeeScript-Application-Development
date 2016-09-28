@@ -13,6 +13,9 @@ arr = [0..10]
 
 console.log n for n in arr by 2
 
-plants = {'grass':'grass', 'flower':'flower'}
-for plant in plants
-    console.log plant
+plants = {'p-grass':'grass', 'p-flower':'flower'}
+for k,v of plants
+    console.log k + ':' + v
+
+str = "#{1+1}=#{1+1}"
+console.log str

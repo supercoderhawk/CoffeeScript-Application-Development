@@ -202,3 +202,16 @@ evenNumbers = (n  for n in [0..10] by 2)
 # evenNumbers为[0, 2, 4, 6, 8, 10]
 ```
 
+## 简单对象
+CoffeeScript中的对象与JavaScript中的类似，但是在声明时有些不同，CoffeeScript中声明对象时可以省略大括号，使用缩进来确定对象的结构；同时，在不同行声明对象属性，可以省略逗号，类似于数组的声明。
+
+```
+bicyle = 
+    color: 'black'
+    brand: 
+        make: 'Surly'
+        model: 'Cross Check'
+    fenders: true
+    gears: 24
+
+```
