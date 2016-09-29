@@ -21,9 +21,11 @@ body > p {
 }
 
 #available_pets {
-    margin: 0 2em 0 1.5em;
+    margin: 0 2em 0em 1.5em;
+    padding: 1em 0 5em 0;
     float: left;
     border-right: 1px solid #194900;
+
 }
 
 #available_pets > li {
@@ -39,6 +41,11 @@ body > p {
     font-weight:bold;
     margin: 0.1em 0;
     padding: 0.5em 5em 0.5em 0.5em;
+}
+
+#pet_information{
+    float: left;
+    max-width: 40em;
 }
 
 .selected{
