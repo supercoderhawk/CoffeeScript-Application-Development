@@ -1,3 +1,4 @@
+/*文档体和头部*/
 body {
     font-family: "Times New Roman", sans-serif;
     padding: 0;
@@ -15,16 +16,19 @@ h1 {
 }
 
 body > p {
-    padding: 1em;
+    padding: 0 1em;
+    margin: 0.2em 0;
     font-size: 1.2em;
     font-style: italic;
 }
 
+/*左侧菜单栏*/
 #available_pets {
     margin: 0 2em 0em 1.5em;
-    padding: 1em 0 5em 0;
+    padding: 0.5em 0 1.5em 0;
     float: left;
     border-right: 1px solid #194900;
+    min-width: 18em;
 
 }
 
@@ -43,27 +47,85 @@ body > p {
     padding: 0.5em 5em 0.5em 0.5em;
 }
 
-#pet_information{
-    float: left;
-    max-width: 40em;
-}
-
-.selected{
+#available_pets > li > a.selected{
     background-color: aqua;
     border: 1px solid black;
     border-right: none;
 }
 
-.sound{
-    color: grey;
+.sound, .action{
+    margin-left: 0.4em;
     font-style: italic;
-    font-size: small;
+    color: grey;
 }
 
-.sound::before{
+.sound::before, .sound::after{
     content: '*';
 }
 
-.sound::after{
-    content: '*';
+.action::before, .action::after{
+    content: '"';
+}
+
+/*宠物名特性*/
+#featured{
+    margin: 0.5em 1em;
+    background: #F2EDDE;
+    padding:0.5em;
+    border-radius: 0.5em;
+    width:15em;
+    border:3px solid #C93F00;
+}
+
+#featured > .title{
+    font-weight: bold;
+    display: block;
+    margin: 0.2em 0 0.5em 0;
+}
+
+#featured > a{
+    font-weight:bold;
+    text-decoration: none;
+    margin:0.3em 0;
+    display: block;
+    color: #890900;
+}
+/*过滤器列表*/
+#filtering{
+    margin: 1em;
+    background: #F2EDDE;
+    padding:0.5em;
+    border-radius: 0.5em;
+    overflow: auto;
+    width: 30em;
+
+}
+
+#filtering > *, #filtering_opts > li{
+    float: left;
+}
+
+#filtering_opts{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#filtering_opts > li{
+    margin: 0 0.5em;
+}
+
+#filtering_opts > li > a{
+    color: #333;
+}
+
+/*中间的宠物详细信息*/
+#pet_information{
+    float: left;
+    max-width: 40em;
+}
+
+/*图片*/
+img{
+    width: 12em;
 }
