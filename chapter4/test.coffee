@@ -4,3 +4,4 @@ if yeti?
 test = null
 test ?= 'a'
 test ||= 'm'
+k = yeti?
