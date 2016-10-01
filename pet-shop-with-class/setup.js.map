@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "setup.js",
+  "sourceRoot": "",
+  "sources": [
+    "setup.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,MAAA;;EAAA,IAAA,GAAO;IACL,KAAA,EAAY,IAAA,MAAA,CAAO,IAAI,CAAC,SAAZ,CADP;IAEL,OAAA,EAAS,MAAM,CAAC,YAAP,CAAA,CAFJ;;AAAP"
+}
