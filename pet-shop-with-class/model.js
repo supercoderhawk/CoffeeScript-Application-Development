@@ -42,6 +42,22 @@
       return results;
     };
 
+    Animal.prototype.behaviors = function() {
+      switch (this.type) {
+        case 'cat':
+          return ['meow', null];
+        case 'dog':
+          return ['bark', 'wag'];
+        case 'rabbit':
+          return [null, 'hop hop'];
+        case 'horse':
+        case 'donkey':
+          return ['neigh', null];
+        default:
+          return [null, null];
+      }
+    };
+
     return Animal;
 
   })();
