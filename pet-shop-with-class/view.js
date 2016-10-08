@@ -3,15 +3,13 @@
   var slice = [].slice;
 
   window.PetView = (function() {
-    var formattedLink;
-
-    function PetView(pet1) {
-      this.pet = pet1;
+    function PetView(pet) {
+      this.pet = pet;
     }
 
     PetView.prototype.formattedDescription = function() {
       var ref;
-      return ("<h2>" + pet.name + "</h2>") + ("<h3 class='breed'>" + pet.breed + " (" + ((ref = pet.age) != null ? ref : '??') + " years old)</h3>") + this.imageTag(this.pet.image) + ("<p class='description'>" + this.pet.description + "</p>");
+      return ("<h2>" + this.pet.name + "</h2>") + ("<h3 class='breed'>" + this.pet.breed + " (" + ((ref = this.pet.age) != null ? ref : '??') + " years old)</h3>") + this.imageTag(this.pet.image) + ("<p class='description'>" + this.pet.description + "</p>");
     };
 
     PetView.prototype.imageTag = function(filename) {
@@ -33,7 +31,7 @@
       return result;
     };
 
-    formattedLink = function(index, showBehavior) {
+    PetView.prototype.formattedLink = function(index, showBehavior) {
       if (showBehavior == null) {
         showBehavior = true;
       }
@@ -50,7 +48,7 @@
     }
 
     PetListView.prototype.renderList = function(filter) {
-      var animal, available_pets, i, petList;
+      var available_pets, i, petList, view;
       if (filter == null) {
         filter = 'All';
       }
@@ -59,7 +57,7 @@
         ref = this.views;
         results = [];
         for (i = j = 0, len = ref.length; j < len; i = ++j) {
-          animal = ref[i];
+          view = ref[i];
           if (filter === 'All' || view.pet.type === filter.toLowerCase()) {
             results.push("<li>" + (view.formattedLink(i)) + "</li>");
           }
@@ -144,7 +142,10 @@
 
     ShopView.prototype.render = function() {
       var nameElement;
-      return nameElement = document.getElementById('owner_name');
+      nameElement = document.getElementById('owner_name');
+      nameElement.innerHTML = this.owner.possessiveName();
+      document.title = (this.owner.possessiveName()) + " Pet Shop";
+      return this.mainContent.render();
     };
 
     return ShopView;

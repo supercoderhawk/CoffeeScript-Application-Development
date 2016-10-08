@@ -2,7 +2,7 @@ class window.PetView
   constructor: (@pet) ->
 
   formattedDescription: ->
-    "<h2>#{pet.name}</h2>" + "<h3 class='breed'>#{pet.breed} (#{pet.age ? '??'} years old)</h3>" +
+    "<h2>#{@pet.name}</h2>" + "<h3 class='breed'>#{@pet.breed} (#{@pet.age ? '??'} years old)</h3>" +
       @imageTag(@pet.image) + "<p class='description'>#{@pet.description}</p>"
 
   imageTag: (filename) ->
@@ -24,14 +24,14 @@ class window.PetView
     result
 
   # 产生宠物的超链接
-  formattedLink = (index, showBehavior = true) ->
+  formattedLink: (index, showBehavior = true) ->
     "<a href='#' onclick='selectPet(#{index},this)'>#{@formattedName showBehavior}</a>"
 
 class window.PetListView
   constructor: (@views) ->
 
   renderList: (filter = 'All') ->
-    petList = for animal, i in @views when filter == 'All' or view.pet.type == filter.toLowerCase()
+    petList = for view, i in @views when filter == 'All' or view.pet.type == filter.toLowerCase()
       "<li>#{view.formattedLink i}</li>"
 
     available_pets = document.getElementById 'available_pets'
@@ -82,3 +82,6 @@ class window.ShopView
 
   render: ->
     nameElement = document.getElementById 'owner_name'
+    nameElement.innerHTML = @owner.possessiveName()
+    document.title = "#{@owner.possessiveName()} Pet Shop"
+    @mainContent.render()

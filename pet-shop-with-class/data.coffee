@@ -1,3 +1,5 @@
+window.data = {}
+
 window.data.ownerName = 'Programmer'
 
 window.data.animals = [
